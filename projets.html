@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projets — Marcus Philius</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">MP</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="profil.html">Profil</a></li>
+        <li><a href="parcours.html">Parcours</a></li>
+        <li><a href="competences.html">Compétences</a></li>
+        <li><a href="projets.html" class="active">Projets</a></li>
+        <li><a href="btssio.html">BTS SIO</a></li>
+        <li><a href="epreuves.html">Épreuves</a></li>
+        <li><a href="contact.html" class="nav-cta">Contact</a></li>
+      </ul>
+      <button class="burger" id="burger">&#9776;</button>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <span class="hero-tag">Réalisations</span>
+    <h1>Mes Projets Techniques</h1>
+    <p>Projets réalisés dans le cadre du BTS SIO SISR — conception d'infrastructures virtualisées, segmentation réseau, haute disponibilité, sécurisation et administration système.</p>
+  </div>
+
+  <div class="projet-detail">
+
+    <!-- PROJET 1 : GLPI -->
+    <div id="glpi" style="margin-bottom: 4rem;">
+      <div class="projet-hero">
+        <div>
+          <div class="project-tag">Projet 1</div>
+          <h2>Déploiement d'un serveur GLPI</h2>
+          <p>Ce projet consiste à déployer et administrer une solution de gestion de parc informatique avec GLPI. Il comprend l'installation complète du serveur, sa configuration, l'importation de données et la mise en place de la gestion des tickets afin d'optimiser l'organisation et le suivi des ressources informatiques.</p>
+          <p>GLPI (Gestionnaire Libre de Parc Informatique) est un outil open source de gestion ITSM permettant d'inventorier les équipements, gérer les incidents et suivre les actifs informatiques d'une organisation.</p>
+          <div class="project-techs" style="margin-top: 1.5rem;">
+            <span>GLPI</span><span>Linux Debian</span><span>Apache</span><span>MariaDB</span><span>PHP</span><span>FusionInventory</span>
+          </div>
+        </div>
+        <div class="projet-meta">
+          <div class="meta-item">
+            <label>Contexte</label>
+            <span>BTS SIO SISR — Projet 1</span>
+          </div>
+          <div class="meta-item">
+            <label>Durée</label>
+            <span>Projet encadré</span>
+          </div>
+          <div class="meta-item">
+            <label>Environnement</label>
+            <span>Linux / Apache / MySQL</span>
+          </div>
+          <div class="meta-item">
+            <label>Compétences</label>
+            <span>A2.2 — Installation & déploiement</span>
+          </div>
+        </div>
+      </div>
+
+      <h3 style="font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; color: var(--text); margin-bottom: 1.5rem;">Étapes du projet</h3>
+      <div class="phase-grid">
+        <div class="phase-card">
+          <div class="phase-num">Étape 1</div>
+          <h4>Installation du serveur</h4>
+          <p>Installation de Debian Server, Apache, MariaDB et PHP. Configuration du virtual host et des droits d'accès.</p>
+        </div>
+        <div class="phase-card">
+          <div class="phase-num">Étape 2</div>
+          <h4>Déploiement GLPI</h4>
+          <p>Installation de GLPI, configuration de la base de données, paramétrage initial et création des comptes administrateurs.</p>
+        </div>
+        <div class="phase-card">
+          <div class="phase-num">Étape 3</div>
+          <h4>Importation des données</h4>
+          <p>Intégration du plugin FusionInventory pour l'inventaire automatique des postes, import des utilisateurs.</p>
+        </div>
+        <div class="phase-card">
+          <div class="phase-num">Étape 4</div>
+          <h4>Gestion des tickets</h4>
+          <p>Configuration des règles d'assignation, des SLA, des catégories et formation des utilisateurs à la création de tickets.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROJET 2 : HEALTH4ALL -->
+    <div id="health4all">
+      <div class="projet-hero" style="border-color: rgba(59,130,246,0.35);">
+        <div>
+          <div class="project-tag">Projet 2</div>
+          <h2>Refonte SI Health4All</h2>
+          <p>Health4All est un prestataire de services de santé gérant des données médicales sensibles pour le compte de cliniques régionales. L'infrastructure actuelle étant vieillissante et non conforme aux nouvelles régulations HDS (Hébergement de Données de Santé), la direction a confié la refonte totale du Système d'Information.</p>
+          <p>Ce projet répond à trois impératifs : haute disponibilité (zéro interruption), sécurité maximale (conformité RGPD/HDS, chiffrement) et mobilité sécurisée (accès VPN pour les médecins nomades).</p>
+          <div class="project-techs" style="margin-top: 1.5rem;">
+            <span>Proxmox VE</span><span>pfSense</span><span>HAProxy</span><span>Keepalived</span><span>Windows Server</span><span>Active Directory</span><span>MariaDB</span><span>Nextcloud</span><span>WireGuard</span><span>Zabbix</span><span>Suricata</span><span>Ansible</span>
+          </div>
+        </div>
+        <div class="projet-meta">
+          <div class="meta-item">
+            <label>Contexte</label>
+            <span>BTS SIO SISR — Projet 2</span>
+          </div>
+          <div class="meta-item">
+            <label>Durée estimée</label>
+            <span>60 à 70 heures</span>
+          </div>
+          <div class="meta-item">
+            <label>Hyperviseur</label>
+            <span>Proxmox VE</span>
+          </div>
+          <div class="meta-item">
+            <label>Conformité</label>
+            <span>RGPD · HDS</span>
+          </div>
+          <div class="meta-item">
+            <label>Compétences</label>
+            <span>A2.1 · A2.2 · A2.3</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Architecture réseau -->
+      <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 2rem; margin-bottom: 2rem;">
+        <h3 style="font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; color: var(--text); margin-bottom: 1.5rem;">Architecture réseau — Plan d'adressage VLAN</h3>
+        <div style="overflow-x: auto;">
+          <table style="width: 100%; border-collapse: collapse; font-size: 0.875rem;">
+            <thead>
+              <tr style="border-bottom: 1px solid var(--border);">
+                <th style="text-align:left; padding: 0.75rem 1rem; color: var(--text-faint); font-weight: 500; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.08em;">VLAN</th>
+                <th style="text-align:left; padding: 0.75rem 1rem; color: var(--text-faint); font-weight: 500; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.08em;">Nom</th>
+                <th style="text-align:left; padding: 0.75rem 1rem; color: var(--text-faint); font-weight: 500; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.08em;">Réseau</th>
+                <th style="text-align:left; padding: 0.75rem 1rem; color: var(--text-faint); font-weight: 500; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.08em;">Rôle</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid var(--border);">
+                <td style="padding: 0.75rem 1rem; color: var(--accent); font-weight: 600;">10</td>
+                <td style="padding: 0.75rem 1rem; color: var(--text);">DMZ</td>
+                <td style="padding: 0.75rem 1rem; color: var(--text-muted); font-family: monospace;">192.168.10.0/24</td>
+                <td style="padding: 0.75rem 1rem; color: var(--text-muted);">Serveurs web exposés</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--border);">
+                <td style="padding: 0.75rem 1rem; color: var(--accent); font-weight: 600;">20</td>
+                <td style="padding: 0.75rem 1rem; color: var(--text);">SERVEURS</td>
+                <td style="padding: 0.75rem 1rem; color: var(--text-muted); font-family: monospace;">192.168.20.0/24</td>
+                <td style="padding: 0.75rem 1rem; color: var(--text-muted);">AD, SGBD, Nextcloud</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--border);">
+                <td style="padding: 0.75rem 1rem; color: var(--accent); font-weight: 600;">30</td>
+                <td style="padding: 0.75rem 1rem; color: var(--text);">ADMIN</td>
+                <td style="padding: 0.75rem 1rem; color: var(--text-muted); font-family: monospace;">192.168.30.0/24</td>
+                <td style="padding: 0.75rem 1rem; color: var(--text-muted);">Postes administrateurs</td>
+              </tr>
+              <tr>
+                <td style="padding: 0.75rem 1rem; color: var(--accent); font-weight: 600;">40</td>
+                <td style="padding: 0.75rem 1rem; color: var(--text);">INVITÉS</td>
+                <td style="padding: 0.75rem 1rem; color: var(--text-muted); font-family: monospace;">192.168.40.0/24</td>
+                <td style="padding: 0.75rem 1rem; color: var(--text-muted);">Accès internet limité</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <h3 style="font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; color: var(--text); margin-bottom: 1.5rem;">Les 6 phases du projet</h3>
+      <div class="phase-grid">
+        <div class="phase-card">
+          <div class="phase-num">Phase 1</div>
+          <h4>Conception & Cadre légal</h4>
+          <p>Analyse RGPD/HDS, schéma réseau détaillé (VLANs), plan d'adressage IP, choix techniques justifiés, cahier de recette.</p>
+        </div>
+        <div class="phase-card">
+          <div class="phase-num">Phase 2</div>
+          <h4>Socle Infrastructure</h4>
+          <p>Proxmox VE, pfSense, vSwitch/Bridge VLAN-aware, Windows Server AD/DNS/DHCP, Linux Debian + MariaDB.</p>
+        </div>
+        <div class="phase-card">
+          <div class="phase-num">Phase 3</div>
+          <h4>Haute Disponibilité</h4>
+          <p>Cluster web Apache/Nginx, load balancing HAProxy, VIP Keepalived/CARP, test de panne et preuve de continuité.</p>
+        </div>
+        <div class="phase-card">
+          <div class="phase-num">Phase 4</div>
+          <h4>Mobilité & VPN</h4>
+          <p>Nextcloud en HTTPS relié à l'AD (LDAP), VPN WireGuard/OpenVPN, guide utilisateur télétravail.</p>
+        </div>
+        <div class="phase-card">
+          <div class="phase-num">Phase 5</div>
+          <h4>Sécurité & Supervision</h4>
+          <p>Sauvegarde PBS/Veeam, supervision Zabbix avec alertes mail, IDS Suricata, analyse trafic Wireshark.</p>
+        </div>
+        <div class="phase-card">
+          <div class="phase-num">Phase 6</div>
+          <h4>Automatisation DevOps</h4>
+          <p>Scripts PowerShell/Bash (création AD depuis CSV), déploiement Ansible, administration SSH/RDP via VPN.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <p class="footer-name">Marcus Philius</p>
+      <p class="footer-sub">BTS SIO SISR · ESUP Puteaux · Session 2024–2026</p>
+      <div class="footer-links">
+        <a href="contact.html">Contact</a>
+        <a href="epreuves.html">Épreuves</a>
+        <a href="projets.html">Projets</a>
+      </div>
+      <p class="footer-copy">© 2026 Marcus Philius — Tous droits réservés</p>
+    </div>
+  </footer>
+  <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marcus Philius — Portfolio BTS SIO SISR</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">MP</a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Accueil</a></li>
+        <li><a href="profil.html">Profil</a></li>
+        <li><a href="parcours.html">Parcours</a></li>
+        <li><a href="competences.html">Compétences</a></li>
+        <li><a href="projets.html">Projets</a></li>
+        <li><a href="btssio.html">BTS SIO</a></li>
+        <li><a href="epreuves.html">Épreuves</a></li>
+        <li><a href="contact.html" class="nav-cta">Contact</a></li>
+      </ul>
+      <button class="burger" id="burger">&#9776;</button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <span class="hero-tag">BTS SIO · Option SISR</span>
+      <h1>Marcus<br><span class="accent">Philius</span></h1>
+      <p class="hero-sub">Étudiant en BTS SIO SISR à l'ESUP Puteaux — Spécialiste en infrastructure, systèmes & réseaux. Passionné par la virtualisation, la cybersécurité et l'administration système.</p>
+      <div class="hero-btns">
+        <a href="projets.html" class="btn-primary">Voir mes projets</a>
+        <a href="profil.html" class="btn-secondary">À propos de moi</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card">
+        <div class="hero-card-line"><span class="dot green"></span> Proxmox VE</div>
+        <div class="hero-card-line"><span class="dot blue"></span> pfSense / OPNsense</div>
+        <div class="hero-card-line"><span class="dot blue"></span> Windows Server AD</div>
+        <div class="hero-card-line"><span class="dot yellow"></span> Linux Debian / Rocky</div>
+        <div class="hero-card-line"><span class="dot green"></span> HAProxy · Keepalived</div>
+        <div class="hero-card-line"><span class="dot blue"></span> Zabbix · Suricata</div>
+        <div class="hero-card-line"><span class="dot yellow"></span> Ansible · Bash</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT RAPIDE -->
+  <section class="about-strip">
+    <div class="about-strip-inner">
+      <div class="strip-item">
+        <span class="strip-num">2</span>
+        <span class="strip-label">Projets techniques</span>
+      </div>
+      <div class="strip-divider"></div>
+      <div class="strip-item">
+        <span class="strip-num">SISR</span>
+        <span class="strip-label">Spécialité infrastructure</span>
+      </div>
+      <div class="strip-divider"></div>
+      <div class="strip-item">
+        <span class="strip-num">2026</span>
+        <span class="strip-label">Session BTS</span>
+      </div>
+      <div class="strip-divider"></div>
+      <div class="strip-item">
+        <span class="strip-num">ESUP</span>
+        <span class="strip-label">Puteaux (92)</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJETS APERCU -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Mes projets techniques</h2>
+      <p class="section-sub">Projets réalisés dans le cadre du BTS SIO SISR — conception d'infrastructures virtualisées, haute disponibilité, sécurisation et administration système.</p>
+
+      <div class="projects-grid">
+
+        <a href="projets.html#glpi" class="project-card">
+          <div class="project-tag">Projet 1</div>
+          <h3>Déploiement d'un serveur GLPI</h3>
+          <p>Déploiement et administration d'une solution de gestion de parc informatique avec GLPI — installation, configuration, importation de données et gestion des tickets.</p>
+          <div class="project-techs">
+            <span>GLPI</span><span>Linux</span><span>MariaDB</span><span>Apache</span>
+          </div>
+          <span class="project-link">Voir le projet →</span>
+        </a>
+
+        <a href="projets.html#health4all" class="project-card featured">
+          <div class="project-tag">Projet 2</div>
+          <h3>Refonte SI Health4All</h3>
+          <p>Refonte complète du Système d'Information d'un prestataire de santé sous Proxmox VE — haute disponibilité, segmentation VLAN, VPN, supervision et conformité HDS/RGPD.</p>
+          <div class="project-techs">
+            <span>Proxmox</span><span>pfSense</span><span>HAProxy</span><span>AD</span><span>Zabbix</span>
+          </div>
+          <span class="project-link">Voir le projet →</span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPETENCES APERCU -->
+  <section class="section bg-alt">
+    <div class="container">
+      <h2 class="section-title">Compétences clés</h2>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <div class="skill-icon">⚙️</div>
+          <h4>Infrastructure & Virtualisation</h4>
+          <p>Proxmox VE, VMware, gestion de VMs, vSwitch, stockage partagé.</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">🔒</div>
+          <h4>Cybersécurité</h4>
+          <p>pfSense, VLANs, IDS Suricata, chiffrement, conformité RGPD/HDS.</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">🌐</div>
+          <h4>Réseaux</h4>
+          <p>VLAN, routage, pare-feu, VPN WireGuard/OpenVPN, DNS/DHCP.</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">🖥️</div>
+          <h4>Systèmes</h4>
+          <p>Windows Server (AD, GPO), Linux Debian/Rocky, administration SSH.</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">📊</div>
+          <h4>Supervision</h4>
+          <p>Zabbix, Centreon, alertes, dashboards, gestion des incidents.</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">🤖</div>
+          <h4>Automatisation</h4>
+          <p>Ansible, scripts Bash/PowerShell, gestion de configuration IaC.</p>
+        </div>
+      </div>
+      <div style="text-align:center; margin-top:2.5rem;">
+        <a href="competences.html" class="btn-primary">Toutes mes compétences</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <p class="footer-name">Marcus Philius</p>
+      <p class="footer-sub">BTS SIO SISR · ESUP Puteaux · Session 2024–2026</p>
+      <div class="footer-links">
+        <a href="contact.html">Contact</a>
+        <a href="epreuves.html">Épreuves</a>
+        <a href="projets.html">Projets</a>
+      </div>
+      <p class="footer-copy">© 2026 Marcus Philius — Tous droits réservés</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
