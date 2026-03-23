@@ -30,21 +30,21 @@
   <div class="page-header">
     <span class="hero-tag">Réalisations</span>
     <h1>Mes Projets Techniques</h1>
-    <p>Projets réalisés dans le cadre du BTS SIO SISR — conception d'infrastructures virtualisées, segmentation réseau, haute disponibilité, sécurisation et administration système.</p>
+    <p>Projets réalisés dans le cadre du BTS SIO SISR — conception d'infrastructures virtualisées, segmentation réseau, haute disponibilité, sécurisation et administration système. Cliquez sur un projet pour télécharger le livrable.</p>
   </div>
 
   <div class="projet-detail">
 
-    <!-- PROJET 1 : GLPI -->
-    <div id="glpi" style="margin-bottom: 4rem;">
-      <div class="projet-hero">
+    <!-- PROJET 1 : Infrastructure SIO -->
+    <a href="docs/Projet1_Infrastructure_SIO.docx" download style="text-decoration:none;color:inherit;display:block;margin-bottom:4rem;cursor:pointer;" id="glpi">
+      <div class="projet-hero" style="transition:border-color 0.3s,box-shadow 0.3s;" onmouseover="this.style.borderColor='rgba(37,99,235,0.6)';this.style.boxShadow='0 0 20px rgba(37,99,235,0.15)';" onmouseout="this.style.borderColor='';this.style.boxShadow='';">
         <div>
-          <div class="project-tag">Projet 1</div>
-          <h2>Déploiement d'un serveur GLPI</h2>
-          <p>Ce projet consiste à déployer et administrer une solution de gestion de parc informatique avec GLPI. Il comprend l'installation complète du serveur, sa configuration, l'importation de données et la mise en place de la gestion des tickets afin d'optimiser l'organisation et le suivi des ressources informatiques.</p>
-          <p>GLPI (Gestionnaire Libre de Parc Informatique) est un outil open source de gestion ITSM permettant d'inventorier les équipements, gérer les incidents et suivre les actifs informatiques d'une organisation.</p>
+          <div class="project-tag">Projet 1 · 📥 Cliquez pour télécharger le livrable</div>
+          <h2>Infrastructure Réseau & Système</h2>
+          <p>Déploiement d'une infrastructure d'entreprise complète sous Proxmox VE : contrôleur de domaine Active Directory avec DNS et serveur de fichiers ESUP, pare-feu pfSense (WAN/LAN), supervision Zabbix, inventaire GLPI et poste client Windows 11 intégré au domaine avec GPO.</p>
+          <p>L'infrastructure utilise un adressage statique sur le réseau 192.168.1.0/24 avec gestion des identités centralisée, groupes de sécurité (GS_Racine, GS_IT, GS_RH) et mappage automatique de lecteur réseau par GPO.</p>
           <div class="project-techs" style="margin-top: 1.5rem;">
-            <span>GLPI</span><span>Linux Debian</span><span>Apache</span><span>MariaDB</span><span>PHP</span><span>FusionInventory</span>
+            <span>Proxmox VE</span><span>pfSense</span><span>Windows Server 2022</span><span>Active Directory</span><span>DNS</span><span>Zabbix</span><span>GLPI</span><span>Windows 11</span><span>GPO</span>
           </div>
         </div>
         <div class="projet-meta">
@@ -58,50 +58,50 @@
           </div>
           <div class="meta-item">
             <label>Environnement</label>
-            <span>Linux / Apache / MySQL</span>
+            <span>Proxmox / Windows / Linux</span>
           </div>
           <div class="meta-item">
             <label>Compétences</label>
-            <span>A2.2 — Installation & déploiement</span>
+            <span>A2.1 · A2.2 · A2.3</span>
           </div>
         </div>
       </div>
 
-      <h3 style="font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; color: var(--text); margin-bottom: 1.5rem;">Étapes du projet</h3>
+      <h3 style="font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; color: var(--text); margin-bottom: 1.5rem; margin-top: 1.5rem;">Étapes du projet</h3>
       <div class="phase-grid">
         <div class="phase-card">
           <div class="phase-num">Étape 1</div>
-          <h4>Installation du serveur</h4>
-          <p>Installation de Debian Server, Apache, MariaDB et PHP. Configuration du virtual host et des droits d'accès.</p>
+          <h4>Pare-feu pfSense</h4>
+          <p>Installation de pfSense avec interface WAN (192.168.3.185) et LAN (192.168.1.1). Configuration du filtrage, NAT et routage pour l'accès Internet des VMs.</p>
         </div>
         <div class="phase-card">
           <div class="phase-num">Étape 2</div>
-          <h4>Déploiement GLPI</h4>
-          <p>Installation de GLPI, configuration de la base de données, paramétrage initial et création des comptes administrateurs.</p>
+          <h4>Active Directory & Fichiers</h4>
+          <p>Déploiement de Windows Server 2022 (192.168.1.10) avec AD DS, DNS, serveur de fichiers ESUP. Création des OU, groupes de sécurité et de l'utilisateur Marcus Philius. GPO de mappage lecteur réseau.</p>
         </div>
         <div class="phase-card">
           <div class="phase-num">Étape 3</div>
-          <h4>Importation des données</h4>
-          <p>Intégration du plugin FusionInventory pour l'inventaire automatique des postes, import des utilisateurs.</p>
+          <h4>Supervision & Inventaire</h4>
+          <p>Installation de Zabbix et GLPI sur Debian (192.168.1.12). Déploiement de l'agent Zabbix sur Windows Server (port 10050) et de l'agent GLPI sur le poste client.</p>
         </div>
         <div class="phase-card">
           <div class="phase-num">Étape 4</div>
-          <h4>Gestion des tickets</h4>
-          <p>Configuration des règles d'assignation, des SLA, des catégories et formation des utilisateurs à la création de tickets.</p>
+          <h4>Poste client & Validation</h4>
+          <p>Intégration d'un poste Windows 11 au domaine AD. Vérification de l'authentification, application des GPO, mappage du lecteur réseau et remontée dans l'inventaire GLPI.</p>
         </div>
       </div>
-    </div>
+    </a>
 
     <!-- PROJET 2 : HEALTH4ALL -->
-    <div id="health4all">
-      <div class="projet-hero" style="border-color: rgba(59,130,246,0.35);">
+    <a href="docs/Projet2_Health4All.docx" download style="text-decoration:none;color:inherit;display:block;cursor:pointer;" id="health4all">
+      <div class="projet-hero" style="border-color: rgba(59,130,246,0.35);transition:border-color 0.3s,box-shadow 0.3s;" onmouseover="this.style.borderColor='rgba(16,185,129,0.6)';this.style.boxShadow='0 0 20px rgba(16,185,129,0.15)';" onmouseout="this.style.borderColor='rgba(59,130,246,0.35)';this.style.boxShadow='';">
         <div>
-          <div class="project-tag">Projet 2</div>
+          <div class="project-tag">Projet 2 · 📥 Cliquez pour télécharger le livrable</div>
           <h2>Refonte SI Health4All</h2>
-          <p>Health4All est un prestataire de services de santé gérant des données médicales sensibles pour le compte de cliniques régionales. L'infrastructure actuelle étant vieillissante et non conforme aux nouvelles régulations HDS (Hébergement de Données de Santé), la direction a confié la refonte totale du Système d'Information.</p>
-          <p>Ce projet répond à trois impératifs : haute disponibilité (zéro interruption), sécurité maximale (conformité RGPD/HDS, chiffrement) et mobilité sécurisée (accès VPN pour les médecins nomades).</p>
+          <p>Health4All est une association du secteur médical qui souhaite déployer une plateforme collaborative Nextcloud pour le partage de documents entre ses équipes. L'infrastructure doit garantir la haute disponibilité, la segmentation réseau et la supervision centralisée.</p>
+          <p>Ce projet répond à trois impératifs : haute disponibilité (HAProxy + Keepalived avec VIP 192.168.10.100), segmentation réseau (3 VLANs isolés via pfSense) et supervision dédiée (Zabbix 6.4.21 sur VM indépendante dans le VLAN 30).</p>
           <div class="project-techs" style="margin-top: 1.5rem;">
-            <span>Proxmox VE</span><span>pfSense</span><span>HAProxy</span><span>Keepalived</span><span>Windows Server</span><span>Active Directory</span><span>MariaDB</span><span>Nextcloud</span><span>WireGuard</span><span>Zabbix</span><span>Suricata</span><span>Ansible</span>
+            <span>Proxmox VE</span><span>pfSense</span><span>HAProxy</span><span>Keepalived</span><span>Apache</span><span>MariaDB</span><span>Nextcloud</span><span>Zabbix</span><span>VLANs</span>
           </div>
         </div>
         <div class="projet-meta">
@@ -118,8 +118,8 @@
             <span>Proxmox VE</span>
           </div>
           <div class="meta-item">
-            <label>Conformité</label>
-            <span>RGPD · HDS</span>
+            <label>Architecture</label>
+            <span>3 tiers · 3 VLANs</span>
           </div>
           <div class="meta-item">
             <label>Compétences</label>
@@ -129,7 +129,7 @@
       </div>
 
       <!-- Architecture réseau -->
-      <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 2rem; margin-bottom: 2rem;">
+      <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 2rem; margin-bottom: 2rem; margin-top: 1.5rem;">
         <h3 style="font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; color: var(--text); margin-bottom: 1.5rem;">Architecture réseau — Plan d'adressage VLAN</h3>
         <div style="overflow-x: auto;">
           <table style="width: 100%; border-collapse: collapse; font-size: 0.875rem;">
@@ -144,27 +144,21 @@
             <tbody>
               <tr style="border-bottom: 1px solid var(--border);">
                 <td style="padding: 0.75rem 1rem; color: var(--accent); font-weight: 600;">10</td>
-                <td style="padding: 0.75rem 1rem; color: var(--text);">DMZ</td>
+                <td style="padding: 0.75rem 1rem; color: var(--text);">WEB</td>
                 <td style="padding: 0.75rem 1rem; color: var(--text-muted); font-family: monospace;">192.168.10.0/24</td>
-                <td style="padding: 0.75rem 1rem; color: var(--text-muted);">Serveurs web exposés</td>
+                <td style="padding: 0.75rem 1rem; color: var(--text-muted);">HAProxy, Keepalived, Apache reverse proxy</td>
               </tr>
               <tr style="border-bottom: 1px solid var(--border);">
                 <td style="padding: 0.75rem 1rem; color: var(--accent); font-weight: 600;">20</td>
-                <td style="padding: 0.75rem 1rem; color: var(--text);">SERVEURS</td>
+                <td style="padding: 0.75rem 1rem; color: var(--text);">APPLICATION</td>
                 <td style="padding: 0.75rem 1rem; color: var(--text-muted); font-family: monospace;">192.168.20.0/24</td>
-                <td style="padding: 0.75rem 1rem; color: var(--text-muted);">AD, SGBD, Nextcloud</td>
-              </tr>
-              <tr style="border-bottom: 1px solid var(--border);">
-                <td style="padding: 0.75rem 1rem; color: var(--accent); font-weight: 600;">30</td>
-                <td style="padding: 0.75rem 1rem; color: var(--text);">ADMIN</td>
-                <td style="padding: 0.75rem 1rem; color: var(--text-muted); font-family: monospace;">192.168.30.0/24</td>
-                <td style="padding: 0.75rem 1rem; color: var(--text-muted);">Postes administrateurs</td>
+                <td style="padding: 0.75rem 1rem; color: var(--text-muted);">Nextcloud, MariaDB</td>
               </tr>
               <tr>
-                <td style="padding: 0.75rem 1rem; color: var(--accent); font-weight: 600;">40</td>
-                <td style="padding: 0.75rem 1rem; color: var(--text);">INVITÉS</td>
-                <td style="padding: 0.75rem 1rem; color: var(--text-muted); font-family: monospace;">192.168.40.0/24</td>
-                <td style="padding: 0.75rem 1rem; color: var(--text-muted);">Accès internet limité</td>
+                <td style="padding: 0.75rem 1rem; color: var(--accent); font-weight: 600;">30</td>
+                <td style="padding: 0.75rem 1rem; color: var(--text);">SUPERVISION</td>
+                <td style="padding: 0.75rem 1rem; color: var(--text-muted); font-family: monospace;">192.168.30.0/24</td>
+                <td style="padding: 0.75rem 1rem; color: var(--text-muted);">Zabbix Server dédié</td>
               </tr>
             </tbody>
           </table>
@@ -175,36 +169,36 @@
       <div class="phase-grid">
         <div class="phase-card">
           <div class="phase-num">Phase 1</div>
-          <h4>Conception & Cadre légal</h4>
-          <p>Analyse RGPD/HDS, schéma réseau détaillé (VLANs), plan d'adressage IP, choix techniques justifiés, cahier de recette.</p>
+          <h4>Socle Infrastructure</h4>
+          <p>Déploiement de Proxmox VE, création des VMs Debian 12, configuration de pfSense avec les interfaces VLAN 10, 20 et 30, plan d'adressage IP statique.</p>
         </div>
         <div class="phase-card">
           <div class="phase-num">Phase 2</div>
-          <h4>Socle Infrastructure</h4>
-          <p>Proxmox VE, pfSense, vSwitch/Bridge VLAN-aware, Windows Server AD/DNS/DHCP, Linux Debian + MariaDB.</p>
+          <h4>Haute Disponibilité</h4>
+          <p>Installation de HAProxy sur haproxy-01 (MASTER) et haproxy-02 (BACKUP), configuration de Keepalived avec VIP 192.168.10.100, répartition round-robin vers web-01 et web-02.</p>
         </div>
         <div class="phase-card">
           <div class="phase-num">Phase 3</div>
-          <h4>Haute Disponibilité</h4>
-          <p>Cluster web Apache/Nginx, load balancing HAProxy, VIP Keepalived/CARP, test de panne et preuve de continuité.</p>
+          <h4>Nextcloud & MariaDB</h4>
+          <p>Installation de Nextcloud sur la VM dédiée (192.168.20.30) avec Apache et PHP, MariaDB sur linux-db (192.168.20.20), configuration des reverse proxy Apache sur web-01 et web-02.</p>
         </div>
         <div class="phase-card">
           <div class="phase-num">Phase 4</div>
-          <h4>Mobilité & VPN</h4>
-          <p>Nextcloud en HTTPS relié à l'AD (LDAP), VPN WireGuard/OpenVPN, guide utilisateur télétravail.</p>
+          <h4>Supervision Zabbix</h4>
+          <p>Installation d'un serveur Zabbix 6.4.21 dédié sur la VM supervision (192.168.30.10). Déploiement des agents sur les 6 VMs, création des hôtes et vérification du statut ZBX vert.</p>
         </div>
         <div class="phase-card">
           <div class="phase-num">Phase 5</div>
-          <h4>Sécurité & Supervision</h4>
-          <p>Sauvegarde PBS/Veeam, supervision Zabbix avec alertes mail, IDS Suricata, analyse trafic Wireshark.</p>
+          <h4>Firewall & Filtrage</h4>
+          <p>Configuration des règles pfSense inter-VLAN : VLAN 10→20 autorisé, VLAN 30→tous autorisé (supervision), VLAN 20→10 bloqué, isolation des zones.</p>
         </div>
         <div class="phase-card">
           <div class="phase-num">Phase 6</div>
-          <h4>Automatisation DevOps</h4>
-          <p>Scripts PowerShell/Bash (création AD depuis CSV), déploiement Ansible, administration SSH/RDP via VPN.</p>
+          <h4>Tests & Validation</h4>
+          <p>Test d'accès Nextcloud via HAProxy, vérification de la répartition de charge, test de basculement Keepalived, validation du cloisonnement VLAN et de la supervision.</p>
         </div>
       </div>
-    </div>
+    </a>
 
   </div>
 
