@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Épreuve E5 — Marcus Philius</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .e5-info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-bottom: 3rem;
+    }
+    .e5-info-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.2rem 1.5rem;
+      transition: border-color 0.2s;
+    }
+    .e5-info-card:hover { border-color: var(--border-hover); }
+    .e5-info-card .label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-faint);
+      margin-bottom: 0.3rem;
+    }
+    .e5-info-card .value {
+      font-family: var(--font-display);
+      font-weight: 600;
+      color: var(--text);
+      font-size: 0.95rem;
+    }
+    .e5-info-card .value a {
+      color: var(--accent);
+      transition: color 0.2s;
+    }
+    .e5-info-card .value a:hover { color: var(--accent-light); }
+
+    .e5-section-title {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .e5-table-wrapper {
+      overflow-x: auto;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      margin-bottom: 2rem;
+    }
+    .e5-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+      min-width: 950px;
+    }
+    .e5-table thead th {
+      background: var(--bg-card);
+      color: var(--accent-light);
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.9rem 0.8rem;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+    .e5-table thead th:first-child {
+      text-align: left;
+      min-width: 300px;
+    }
+    .e5-table thead th:nth-child(2) {
+      min-width: 120px;
+    }
+    .e5-table thead th.comp-header {
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      transform: rotate(180deg);
+      min-width: 50px;
+      max-width: 65px;
+      padding: 1rem 0.4rem;
+      font-size: 0.62rem;
+      line-height: 1.3;
+      height: 180px;
+    }
+    .e5-table tbody td {
+      padding: 0.8rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-muted);
+      vertical-align: top;
+    }
+    .e5-table tbody td:first-child { color: var(--text); }
+    .e5-table tbody td:nth-child(2) {
+      text-align: center;
+      font-size: 0.78rem;
+      white-space: nowrap;
+      color: var(--text-faint);
+    }
+    .e5-table tbody tr:hover { background: rgba(255,255,255,0.02); }
+
+    .section-row td {
+      background: rgba(59,130,246,0.06) !important;
+      font-family: var(--font-display);
+      font-weight: 700 !important;
+      color: var(--accent) !important;
+      font-size: 0.85rem;
+      padding: 0.7rem 0.8rem;
+    }
+    .comp-cell { text-align: center; }
+
+    .e5-check {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 26px;
+      height: 26px;
+      border-radius: 6px;
+      background: var(--accent-glow);
+      border: 1px solid rgba(59,130,246,0.3);
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 0.8rem;
+    }
+    .e5-empty { display: inline-block; width: 26px; height: 26px; }
+
+    .real-title {
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.25rem;
+      font-size: 0.88rem;
+    }
+    .real-desc {
+      color: var(--text-muted);
+      font-size: 0.78rem;
+      line-height: 1.55;
+    }
+
+    .e5-download {
+      text-align: center;
+      margin: 2.5rem 0 4rem;
+    }
+    .e5-download a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.75rem;
+      background: var(--accent);
+      color: #fff;
+      border-radius: var(--radius);
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .e5-download a:hover {
+      background: var(--accent-light);
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 768px) {
+      .e5-info-grid { grid-template-columns: 1fr 1fr; }
+      .e5-table { font-size: 0.76rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">MP</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="profil.html">Profil</a></li>
+        <li><a href="parcours.html">Parcours</a></li>
+        <li><a href="competences.html">Compétences</a></li>
+        <li><a href="projets.html">Projets</a></li>
+        <li><a href="btssio.html">BTS SIO</a></li>
+        <li><a href="epreuves.html">Épreuves</a></li>
+        <li><a href="epreuve-e5.html" class="active">Épreuve E5</a></li>
+        <li><a href="contact.html" class="nav-cta">Contact</a></li>
+      </ul>
+      <button class="burger" id="burger">&#9776;</button>
+    </div>
+  </nav>
+
+  <!-- HEADER -->
+  <div class="page-header">
+    <span class="hero-tag" style="margin-bottom:1.5rem;">Épreuve E5 · Support et mise à disposition de services informatiques</span>
+    <h1>Tableau de <span class="accent">Synthèse</span></h1>
+    <p>Réalisations professionnelles et compétences mobilisées dans le cadre du BTS SIO option SISR — Session 2026.</p>
+  </div>
+
+  <!-- CONTENU -->
+  <div class="comp-section">
+
+    <!-- INFOS CANDIDAT -->
+    <div class="e5-info-grid">
+      <div class="e5-info-card">
+        <div class="label">Nom et prénom</div>
+        <div class="value">PHILIUS Marcus</div>
+      </div>
+      <div class="e5-info-card">
+        <div class="label">N° Candidat</div>
+        <div class="value">2544719007</div>
+      </div>
+      <div class="e5-info-card">
+        <div class="label">Centre de formation</div>
+        <div class="value">ESUP Paris</div>
+      </div>
+      <div class="e5-info-card">
+        <div class="label">Option</div>
+        <div class="value">SISR</div>
+      </div>
+      <div class="e5-info-card">
+        <div class="label">Session</div>
+        <div class="value">2026</div>
+      </div>
+      <div class="e5-info-card">
+        <div class="label">Portfolio</div>
+        <div class="value"><a href="https://neumann1234.github.io/portfolio/profil.html">neumann1234.github.io</a></div>
+      </div>
+    </div>
+
+    <!-- TABLEAU -->
+    <div class="e5-section-title">Réalisations professionnelles & Compétences mobilisées</div>
+
+    <div class="e5-table-wrapper">
+      <table class="e5-table">
+        <thead>
+          <tr>
+            <th>Réalisations professionnelles</th>
+            <th>Période</th>
+            <th class="comp-header">Gérer le patrimoine informatique</th>
+            <th class="comp-header">Répondre aux incidents et aux demandes d'assistance et d'évolution</th>
+            <th class="comp-header">Développer la présence en ligne de l'organisation</th>
+            <th class="comp-header">Travailler en mode projet</th>
+            <th class="comp-header">Mettre à disposition des utilisateurs un service informatique</th>
+            <th class="comp-header">Organiser son développement professionnel</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <!-- FORMATION -->
+          <tr class="section-row">
+            <td colspan="8">Réalisations en cours de formation</td>
+          </tr>
+          <tr>
+            <td>
+              <div class="real-title">Mise en place de plusieurs outils et logiciels</div>
+              <div class="real-desc">Active Directory, serveur proxy et reverse proxy, pfSense et GLPI</div>
+            </td>
+            <td>11/2024 au 08/2025</td>
+            <td class="comp-cell"><span class="e5-check">✓</span></td>
+            <td class="comp-cell"><span class="e5-check">✓</span></td>
+            <td class="comp-cell"><span class="e5-empty"></span></td>
+            <td class="comp-cell"><span class="e5-check">✓</span></td>
+            <td class="comp-cell"><span class="e5-check">✓</span></td>
+            <td class="comp-cell"><span class="e5-check">✓</span></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="real-title">Conception et mise en ligne d'un portfolio professionnel</div>
+              <div class="real-desc">Conception et déploiement d'un site web professionnel présentant parcours, réalisations techniques et missions effectuées au sein du ministère de l'Intérieur. Mise en ligne via GitHub.</div>
+            </td>
+            <td>01/2026 au 03/2026</td>
+            <td class="comp-cell"><span class="e5-empty"></span></td>
+            <td class="comp-cell"><span class="e5-empty"></span></td>
+            <td class="comp-cell"><span class="e5-check">✓</span></td>
+            <td class="comp-cell"><span class="e5-check">✓</span></td>
+            <td class="comp-cell"><span class="e5-empty"></span></td>
+            <td class="comp-cell"><span class="e5-check">✓</span></td>
+          </tr>
+
+          <!-- 1ERE ANNEE -->
+          <tr class="section-row">
+            <td colspan="8">Réalisations en milieu professionnel en cours de première année</td>
+          </tr>
+          <tr>
+            <td>
+              <div class="real-title">Support et gestion des incidents</div>
+              <div class="real-desc">Analyse et résolution d'incidents systèmes, réseaux et logiciels. Accompagnement des utilisateurs et gestion des demandes via outil de ticketing, avec un objectif de réactivité et de qualité de service.</div>
+            </td>
+            <td>09/2024 à Présent</td>
+            <td class="comp-cell"><span class="e5-check">✓</span></td>
+            <td class="comp-cell"><span class="e5-check">✓</span></td>
+            <td class="comp-cell"><span class="e5-empty"></span></td>
+            <td class="comp-cell"><span class="e5-empty"></span></td>
+            <td class="comp-cell"><span class="e5-check">✓</span></td>
+            <td class="comp-cell"><span class="e5-check">✓</span></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="real-title">Administration des systèmes Active Directory</div>
+              <div class="real-desc">Gestion des comptes utilisateurs, droits d'accès et environnements, administration des services et maintien en conditions opérationnelles des infrastructures utilisateur.</div>
+            </td>
+            <td>01/2025 à Présent</td>
+            <td class="comp-cell"><span class="e5-check">✓</span></td>
+            <td class="comp-cell"><span class="e5-check">✓</span></td>
+            <td class="comp-cell"><span class="e5-empty"></span></td>
+            <td class="comp-cell"><span class="e5-empty"></span></td>
+            <td class="comp-cell"><span class="e5-check">✓</span></td>
+            <td class="comp-cell"><span class="e5-empty"></span></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="real-title">Interventions techniques sur site</div>
+              <div class="real-desc">Réalisation d'interventions sur site : support utilisateurs, diagnostic et résolution d'incidents matériels et logiciels, remplacement d'équipements (postes, périphériques réseau, écrans).</div>
+            </td>
+            <td>03/2025 à Présent</td>
+            <td class="comp-cell"><span class="e5-check">✓</span></td>
+            <td class="comp-cell"><span class="e5-check">✓</span></td>
+            <td class="comp-cell"><span class="e5-empty"></span></td>
+            <td class="comp-cell"><span class="e5-empty"></span></td>
+            <td class="comp-cell"><span class="e5-check">✓</span></td>
+            <td class="comp-cell"><span class="e5-empty"></span></td>
+          </tr>
+
+          <!-- 2EME ANNEE -->
+          <tr class="section-row">
+            <td colspan="8">Réalisations en milieu professionnel en cours de seconde année</td>
+          </tr>
+          <tr>
+            <td>
+              <div class="real-title">Mise en place d'un système de supervision réseau avec Zabbix</div>
+              <div class="real-desc">Déploiement de l'outil de supervision Zabbix à la DSI de la préfecture pour résoudre un problème récurrent : les pannes serveurs et réseau n'étaient détectées qu'après les signalements des agents, causant des interruptions de service.</div>
+            </td>
+            <td>08/2025</td>
+            <td class="comp-cell"><span class="e5-check">✓</span></td>
+            <td class="comp-cell"><span class="e5-check">✓</span></td>
+            <td class="comp-cell"><span class="e5-empty"></span></td>
+            <td class="comp-cell"><span class="e5-empty"></span></td>
+            <td class="comp-cell"><span class="e5-check">✓</span></td>
+            <td class="comp-cell"><span class="e5-empty"></span></td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+    <!-- DOWNLOAD -->
+    <div class="e5-download">
+      <a href="tableau_de_synthese_marcus.xlsx" download>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Télécharger le tableau de synthèse (.xlsx)
+      </a>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <p class="footer-name">Marcus Philius</p>
+      <p class="footer-sub">BTS SIO SISR · ESUP Puteaux · Session 2024–2026</p>
+      <div class="footer-links">
+        <a href="contact.html">Contact</a>
+        <a href="epreuves.html">Épreuves</a>
+        <a href="projets.html">Projets</a>
+      </div>
+      <p class="footer-copy">© 2026 Marcus Philius — Tous droits réservés</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
